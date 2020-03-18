@@ -1,0 +1,58 @@
+.custom-select {
+    display: inline-block;
+    width: 100%;
+    height: $custom-select-height;
+    padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
+    font-family: $custom-select-font-family;
+    font-size: $custom-select-font-size;
+    font-size: $custom-select-font-size;
+    font-weight: $custom-select-font-weight;
+    line-height: $custom-select-line-height;
+    color: $custom-select-color;
+    vertical-align: middle;
+    background: $custom-select-bg $custom-select-background;
+    background: url('../../img/icon-chevron-down.svg') right 16px center no-repeat, linear-gradient(to right, transparent 0%, transparent calc(100% - 40px - 0.5px), $gray-500 calc(100% - 40px - 0.5px), $gray-500 calc(100% - 40px + 0.5px), transparent calc(100% - 40px + 0.5px), transparent 100%);
+    border: $custom-select-border-width solid $custom-select-border-color;
+    @include border-radius($custom-select-border-radius, 0);
+    @include box-shadow($custom-select-box-shadow);
+    appearance: none;
+  
+    &:focus {
+      // border-color: $custom-select-focus-border-color;
+      outline: 0;
+      @if $enable-shadows {
+        box-shadow: $custom-select-box-shadow, $custom-select-focus-box-shadow;
+      } @else {
+        box-shadow: $custom-select-focus-box-shadow;
+      }
+  
+      &::-ms-value {
+        
+        color: $input-color;
+        background-color: $input-bg;
+      }
+    }
+  
+    &[multiple],
+    &[size]:not([size="1"]) {
+      height: auto;
+      padding-right: $custom-select-padding-x;
+      background-image: none;
+    }
+  
+    &:disabled {
+      color: $custom-select-disabled-color;
+      background-color: $custom-select-disabled-bg;
+    }
+  
+    // Hides the default caret in IE11
+    &::-ms-expand {
+      display: none;
+    }
+  
+    // Remove outline from select box in FF
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 $custom-select-color;
+    }
+  }

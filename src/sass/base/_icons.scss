@@ -1,0 +1,29 @@
+.icon {
+    position:relative;
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: center;
+    &::before {
+        content: '';
+        width: 2em;
+        height:1em;
+        margin-right: 10px;
+        border-radius: 100em;
+        background: center / 1em 1em no-repeat;
+    }
+    &--question {
+        &::before {
+            background-image: url('../../img/icon-question-mark.svg');
+        }
+    }
+    &--location {
+        &::before {
+            background-image: url('../../img/icon-location.svg');
+        }
+    }
+    &--envelope {
+        &::before {
+            background-image: url('../../img/icon-envelope.svg');
+        }
+    }
+}

@@ -1,0 +1,21 @@
+
+@import 'abstracts/variables';
+@import "~bootstrap/scss/bootstrap-reboot";
+
+$theme-colors: map-remove($theme-colors, "success", "info", "warning", "danger", "light", "dark");
+
+@import 'base/type';
+@import 'base/image';
+@import 'base/icons';
+
+@import 'components/buttons';
+@import 'components/custom-forms';
+@import 'components/dropdown';
+@import 'components/popover';
+@import 'components/variations';
+
+@import 'layouts/grid';
+
+@import 'pages/single-product';
+
+@import '~swiper/css/swiper';
